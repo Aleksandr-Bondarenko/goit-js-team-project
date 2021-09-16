@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://github.com/DenysPhV/project_group_2",
+  "homepage": "https://aleksandr-bondarenko.github.io/filmoteka",
   "scripts": {
-    "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /project_group_2/"
+    "dev": "parcel src/*.html -p 4140",
+    "build": "parcel build src/*.html --public-url /goit-js-team-project/"
   },
   "repository": {
     "type": "git",
