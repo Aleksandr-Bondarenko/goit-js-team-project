@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://aleksandr-bondarenko.github.io/filmoteka",
+  "homepage": "https://aleksandr-bondarenko.github.io/goit-js-team-project",
   "scripts": {
     "dev": "parcel src/*.html -p 4140",
-    "build": "parcel build src/*.html --public-url /filmoteka/"
+    "build": "parcel build src/*.html --public-url /goit-js-team-project/"
   },
   "repository": {
     "type": "git",
