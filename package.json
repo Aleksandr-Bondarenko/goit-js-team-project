@@ -6,7 +6,7 @@
   "homepage": "https://aleksandr-bondarenko.github.io/filmoteka",
   "scripts": {
     "dev": "parcel src/*.html -p 4140",
-    "build": "parcel build src/*.html --public-url /goit-js-team-project/"
+    "build": "parcel build src/*.html --public-url /filmoteka/"
   },
   "repository": {
     "type": "git",
