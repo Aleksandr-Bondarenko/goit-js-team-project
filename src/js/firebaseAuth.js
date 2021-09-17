@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+// import { getAnalytics } from 'firebase/analytics';
 import {
   getAuth,
   signOut,
@@ -11,6 +12,8 @@ import { firebaseConfig } from './firebaseConfig';
 import { readUserData } from './firebaseData';
 
 initializeApp(firebaseConfig); // Initialize Firebase
+// const analytics = getAnalytics(app);
+
 authInGoogle.addEventListener('click', signInGoogle);
 authOutGoogle.addEventListener('click', signOutGoogle);
 
@@ -23,7 +26,6 @@ function onAuthState() {
       authOutGoogle.style.display = 'inline';
 
       readUserData(user.uid);
-
     }
   });
 }
@@ -39,8 +41,6 @@ function signInGoogle() {
       authOutGoogle.style.display = 'inline';
 
       window.location.reload(false);
-
-
     })
     .catch((error) => {
       console.error(error);
@@ -55,10 +55,8 @@ function signOutGoogle() {
       authInGoogle.style.display = 'inline';
       authOutGoogle.style.display = 'none';
       localStorage.clear();
-   
-     window.location.reload(false);
 
-
+      window.location.reload(false);
     })
     .catch((error) => {
       console.error(error);

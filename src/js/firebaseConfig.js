@@ -1,9 +1,9 @@
 export const firebaseConfig = {
-    apiKey: 'AIzaSyCKT3283MomeOd1iurIf8yMY_letTvXs64',
-    authDomain: 'filmoteka-g2.firebaseapp.com',
-    projectId: 'filmoteka-g2',
-    storageBucket: 'filmoteka-g2.appspot.com',
-    messagingSenderId: '216052405678',
-    appId: '1:216052405678:web:ec2218605ec32f2d70243f',
-    databaseURL: "https://filmoteka-g2-default-rtdb.europe-west1.firebasedatabase.app/",
-  };
+  apiKey: 'AIzaSyAuaZBVttE4aERv4HW5rCK2syOcthpJcls',
+  authDomain: 'filmoteka-js-34.firebaseapp.com',
+  projectId: 'filmoteka-js-34',
+  storageBucket: 'filmoteka-js-34.appspot.com',
+  messagingSenderId: '260826749760',
+  appId: '1:260826749760:web:35891a887111d69647b8a5',
+  databaseURL: 'https://filmoteka-js-34-default-rtdb.europe-west1.firebasedatabase.app/',
+};
