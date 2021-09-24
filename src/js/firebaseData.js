@@ -5,9 +5,11 @@ function writeUserData() {
   const auth = getAuth();
   const db = getDatabase();
   const user = auth.currentUser;
+
   if (!user) {
     return;
-  };
+  }
+
   const userId = user.uid;
   const name = user.displayName;
   const email = user.email;
@@ -27,20 +29,24 @@ function writeUserData() {
 
 function readUserData(userId) {
   const dbRef = ref(getDatabase());
+  console.log(userId);
   get(child(dbRef, `users/${userId}`))
     .then((data) => {
+      console.log(data);
       let locStor = data.val().local_storage;
+
       if (!locStor) {
         return;
-      };
+      }
       if (data.exists()) {
         if (locStor.Queued) {
           localStorage.setItem('Queued', JSON.stringify(locStor.Queued));
+          console.log(locStor.Queued);
         }
         if (locStor.Watched) {
           localStorage.setItem('Watched', JSON.stringify(locStor.Watched));
         }
-      } 
+      }
     })
     .catch((error) => {
       console.error(error);

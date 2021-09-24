@@ -1,14 +1,17 @@
 import { initializeApp } from 'firebase/app';
-// import { getAnalytics } from 'firebase/analytics';
 import {
   getAuth,
   signOut,
   signInWithPopup,
+  signInGoogle,
   GoogleAuthProvider,
   onAuthStateChanged,
 } from 'firebase/auth';
-import { authInGoogle, authOutGoogle, userName } from './refs';
+
 import { firebaseConfig } from './firebaseConfig';
+
+import { authInGoogle, authOutGoogle, userName } from './refs';
+
 import { readUserData } from './firebaseData';
 
 initializeApp(firebaseConfig); // Initialize Firebase
