@@ -3,7 +3,6 @@ import {
   getAuth,
   signOut,
   signInWithPopup,
-  signInGoogle,
   GoogleAuthProvider,
   onAuthStateChanged,
 } from 'firebase/auth';
@@ -15,7 +14,6 @@ import { authInGoogle, authOutGoogle, userName } from './refs';
 import { readUserData } from './firebaseData';
 
 initializeApp(firebaseConfig); // Initialize Firebase
-// const analytics = getAnalytics(app);
 
 authInGoogle.addEventListener('click', signInGoogle);
 authOutGoogle.addEventListener('click', signOutGoogle);
@@ -38,6 +36,7 @@ function signInGoogle() {
   const auth = getAuth();
   signInWithPopup(auth, provider)
     .then((result) => {
+      console.log(result.user);
       const user = result.user;
       userName.textContent = result.user.displayName;
       authInGoogle.style.display = 'none';
