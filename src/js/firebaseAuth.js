@@ -6,11 +6,13 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
 } from 'firebase/auth';
-import { authInGoogle, authOutGoogle, userName } from './refs';
+
 import { firebaseConfig } from './firebaseConfig';
 import { readUserData } from './firebaseData';
+import { authInGoogle, authOutGoogle, userName } from './refs';
 
 initializeApp(firebaseConfig); // Initialize Firebase
+
 authInGoogle.addEventListener('click', signInGoogle);
 authOutGoogle.addEventListener('click', signOutGoogle);
 
@@ -23,7 +25,6 @@ function onAuthState() {
       authOutGoogle.style.display = 'inline';
 
       readUserData(user.uid);
-
     }
   });
 }
@@ -31,16 +32,15 @@ function onAuthState() {
 function signInGoogle() {
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
+
   signInWithPopup(auth, provider)
     .then((result) => {
-      const user = result.user;
+      // const user = result.user;
       userName.textContent = result.user.displayName;
       authInGoogle.style.display = 'none';
       authOutGoogle.style.display = 'inline';
 
       window.location.reload(false);
-
-
     })
     .catch((error) => {
       console.error(error);
@@ -49,16 +49,15 @@ function signInGoogle() {
 
 function signOutGoogle() {
   const auth = getAuth();
+
   signOut(auth)
     .then(() => {
       userName.textContent = '';
       authInGoogle.style.display = 'inline';
       authOutGoogle.style.display = 'none';
       localStorage.clear();
-   
-     window.location.reload(false);
 
-
+      window.location.reload(false);
     })
     .catch((error) => {
       console.error(error);

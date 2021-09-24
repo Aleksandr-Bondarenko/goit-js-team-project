@@ -227,6 +227,7 @@ body.modal-open {
   border: 1px solid #000000;
   border-radius: 5px;
   background-color: #ffffff;
+  cursor: pointer;
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 250ms;
   &:first-child {
     margin-right: 15px;

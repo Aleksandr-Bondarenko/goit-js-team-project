@@ -16,6 +16,7 @@ function onWatchedBtnClick() {
   } else {
     createCards(cards);
   }
+  console.log(cards);
 }
 
 function onQueueBtnClick() {
