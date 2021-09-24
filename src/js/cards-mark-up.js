@@ -5,7 +5,6 @@ import modalFilmBox from './modal-film';
 import currentMovies from './currentMovies.js';
 
 export function cardsMarkUp(cards) {
-  console.log('This deploy from branch edit-firebase');
   // console.log('cards', cards);
   const apiService = new ApiService();
 

@@ -8,10 +8,8 @@ import {
 } from 'firebase/auth';
 
 import { firebaseConfig } from './firebaseConfig';
-
-import { authInGoogle, authOutGoogle, userName } from './refs';
-
 import { readUserData } from './firebaseData';
+import { authInGoogle, authOutGoogle, userName } from './refs';
 
 initializeApp(firebaseConfig); // Initialize Firebase
 
@@ -34,10 +32,10 @@ function onAuthState() {
 function signInGoogle() {
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
+
   signInWithPopup(auth, provider)
     .then((result) => {
-      console.log(result.user);
-      const user = result.user;
+      // const user = result.user;
       userName.textContent = result.user.displayName;
       authInGoogle.style.display = 'none';
       authOutGoogle.style.display = 'inline';
@@ -51,6 +49,7 @@ function signInGoogle() {
 
 function signOutGoogle() {
   const auth = getAuth();
+
   signOut(auth)
     .then(() => {
       userName.textContent = '';

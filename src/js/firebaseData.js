@@ -14,8 +14,10 @@ function writeUserData() {
   const name = user.displayName;
   const email = user.email;
   const imageUrl = user.photoURL;
+
   let queued = localStorage.getItem('Queued');
   let watched = localStorage.getItem('Watched');
+
   set(ref(db, 'users/' + userId), {
     username: name,
     email: email,
@@ -29,7 +31,7 @@ function writeUserData() {
 
 function readUserData(userId) {
   const dbRef = ref(getDatabase());
-  console.log(userId);
+
   get(child(dbRef, `users/${userId}`))
     .then((data) => {
       console.log(data);
@@ -38,11 +40,13 @@ function readUserData(userId) {
       if (!locStor) {
         return;
       }
+
       if (data.exists()) {
         if (locStor.Queued) {
           localStorage.setItem('Queued', JSON.stringify(locStor.Queued));
           console.log(locStor.Queued);
         }
+
         if (locStor.Watched) {
           localStorage.setItem('Watched', JSON.stringify(locStor.Watched));
         }
@@ -52,4 +56,5 @@ function readUserData(userId) {
       console.error(error);
     });
 }
+
 export { writeUserData, readUserData };
