@@ -1,7 +1,15 @@
 // Скрипт отвечает за отрисовку главной страницы по клику на кнопку HOME и ЛОГО
 
 import ApiService from './apiService';
-import { homeBtnEl, logoEl, libBtnEl, headerEl, searchForm, galleryContainer } from './refs.js';
+import {
+  homeBtnEl,
+  logoEl,
+  libBtnEl,
+  headerEl,
+  searchForm,
+  galleryContainer,
+  inputEl,
+} from './refs.js';
 import { cardsMarkUp } from './cards-mark-up';
 import { renderLibHeaderOnClick } from './libBtnRenderHeader';
 import currentMovies from './currentMovies';
@@ -14,6 +22,7 @@ const apiService = new ApiService();
 
 export const renderMainPageOnClick = (e) => {
   galleryContainer.innerHTML = '';
+  inputEl.value = '';
   spinner.spin(target);
   e.preventDefault();
   homeBtnEl.classList.add('nav-menu__btn_active');

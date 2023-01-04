@@ -8,6 +8,10 @@ body.dark-theme {
   color: #fff;
 }
 
+body {
+  transition: background-color 350ms linear, color 350ms linear;
+}
+
 .toolbar {
   position: absolute; //AB
   right: 0; //AB
